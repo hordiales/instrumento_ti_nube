@@ -1,0 +1,7 @@
+.config.json
+*.log
+*.pyc
+*.wav
+*.mp3
+*.ogg
+*.wav*
