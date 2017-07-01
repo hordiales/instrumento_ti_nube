@@ -34,7 +34,7 @@
                                 "value": "",
                                 "logScale": false,
                                 "precision": 2,
-                                "address": "/mir/HFC/mean",
+                                "address": "/mir/hfc/mean",
                                 "preArgs": [],
                                 "target": [],
                                 "touchAddress": "",
