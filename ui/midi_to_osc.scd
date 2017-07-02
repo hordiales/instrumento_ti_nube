@@ -12,8 +12,20 @@ p = NetAddr.new("127.0.0.1", ~osc_port_instrument);
   b_arg.sendMsg(url_arg, value_arg);
 };
 
-//~send_osc.value(o, p,"/fx/volume", 1.1); //test msg
+~send_osc_push_button = {
+	//push button (not toggle) sends 1 value waits 0.3 seconds and send 0 value
+  |a_arg, b_arg, url_arg|
 
+//  a_arg.sendMsg(url_arg, 1); //on
+//  b_arg.sendMsg(url_arg, 1); //on
+  //0.3.wait;
+ a_arg.sendMsg(url_arg, 0); //off
+ b_arg.sendMsg(url_arg, 0); //off
+};
+
+// Test messages
+//~send_osc_push_button.value(o, p,~btn_control_retrieve);
+//~send_osc.value(o, p,"/fx/volume", 1.1); //test msg
 //~send_osc.value(o, p, "/fx/volume", 127, 10); //test msg
 
 /*
@@ -83,7 +95,7 @@ MIDIIn.control = {arg src, chan, num, val;
 
 ~noteon_bank_left = 25;
 ~noteon_bank_right = 26;
-~noteon_solo = 27;
+~noteon_solo_master = 27;
 
 // solo buttons
 ~noteon_solo_1 = 1;
@@ -95,30 +107,61 @@ MIDIIn.control = {arg src, chan, num, val;
 ~noteon_solo_7 = 19;
 ~noteon_solo_8 = 22;
 
+~noteon_recarm_1 = 3;
+~noteon_recarm_2 = 6;
+~noteon_recarm_3 = 9;
+~noteon_recarm_4 = 12;
+~noteon_recarm_5 = 15;
+~noteon_recarm_6 = 18;
+~noteon_recarm_7 = 21;
+~noteon_recarm_8 = 24;
+
 ~mir_spectral_centroid_enabled = "/mir/spectral_centroid/mean/enabled";
 ~mir_duration_enabled = "/mir/duration/enabled";
 ~mir_bpm_enabled = "/mir/bpm/enabled";
 
+~mir_inharmonicity_enabled = "/mir/inharmonicity/enabled";
+~mir_hfc_enabled = "/mir/hfc/mean/enabled";
+~mir_spectral_complexity_enabled = "/mir/spectral_complexity/mean/enabled";
+~mir_pitch_centroid_enabled = "/mir/pitch_centroid/mean/enabled";
+
+//button
 ~btn_control_retrieve = "/retrieve";
 ~btn_control_clean = "/clean";
+
 MIDIFunc.noteOn({ |veloc, num, chan, src|
 	[chan,num,veloc].postln; //monitor
 	switch(num,
-		~noteon_solo,{
-			~send_osc.value(o, p,~btn_control_retrieve, 1);0.3.wait;~send_osc.value(o, p,~osc_control_retrieve, 0)
+		~noteon_solo_master,{
+			//~send_osc_push_button.value(o, p,~btn_control_retrieve);
+			~send_osc.value(o, p, ~btn_control_retrieve, 1); //sends 1
 		},
+
+		//sends descriptor turn off (not enabled, 0)
 		~noteon_solo_1,{
-			~send_osc.value(o, p,~mir_spectral_centroid_enabled, 1);0.3.wait;~send_osc.value(o, p,~mir_spectral_centroid_enabled, 0)
+			~send_osc_push_button.value(o, p,~mir_hfc_enabled);
 		},
 		~noteon_solo_2,{
-			~send_osc.value(o, p,~mir_duration_enabled, 1);0.3.wait;~send_osc.value(o, p,~mir_duration_enabled, 0)
+			~send_osc_push_button.value(o, p,~mir_spectral_complexity_enabled);
 		},
 		~noteon_solo_3,{
-			~send_osc.value(o, p,~mir_bpm_enabled, 1);0.3.wait;~send_osc.value(o, p,~mir_bpm_enabled, 0)
+			~send_osc_push_button.value(o, p,~mir_inharmonicity_enabled);
+		},
+	    ~noteon_solo_4,{
+			~send_osc_push_button.value(o, p,~mir_pitch_centroid_enabled);
+		},
+
+	    ~noteon_recarm_1,{
+			~send_osc_push_button.value(o, p,~mir_spectral_centroid_enabled);
+		},
+	    ~noteon_recarm_2,{
+			~send_osc_push_button.value(o, p,~mir_duration_enabled);
+		},
+	    ~noteon_recarm_3,{
+			~send_osc_push_button.value(o, p,~mir_bpm_enabled);
 		},
 	)
 });
-
 
 //MIDIIn.connectAll;
 

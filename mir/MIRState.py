@@ -1,4 +1,25 @@
 
+# osc_desc_conv = {
+# 	"content": "content",
+# 	"BPM": "BPM",
+# 	"duration": "sfx.duration",
+# 	"inharmonicity/mean": "sfx.inharmonicity.mean",
+# 	"hfc/mean": "lowlevel.hfc.mean",
+# 	"spectral_centroid/mean": "lowlevel.spectral_centroid.mean",
+# 	"spectral_complexity/mean": "lowlevel.spectral_complexity.mean"
+# }
+# osc_descriptors = list()
+# # for key,value in osc_desc_conv.iteritems():
+# #     osc_descriptors
+# osc_descriptors = ["duration", "BPM", "hfc", "spectral_complexity/mean", "spectral_centroid/mean", "inharmonicity" ]
+# osc_desc_state = dict()
+# for desc in osc_descriptors:
+# 	osc_desc_state[desc] = False
+
+state = dict() #global MIR state
+state["duration"] = "1." # default value
+volume = 1.
+
 class MIRState:
     debug = True
     desc = dict() # MIR Descriptors
@@ -60,12 +81,17 @@ class MIRState:
                 if self.debug:
                     print( "Updated state ", self.desc )
             elif b=="enabled" or c=="enabled":
+                value = int(value)
                 name = a
                 if c=="enabled":
                     name = a+'.'+b
                 self.enabled[name] = value
+                if value==0:
+                    if name in self.desc:
+                        del self.desc[name]
+                        print("Removing key: %s"%name)
                 if self.debug:
-                    print("enabled: %f"%value)
+                    print("enabled value: %i"%value)
             elif b=="mod" or c=="mod":
                 name = a
                 if c=="mod":
