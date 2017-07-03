@@ -4,11 +4,11 @@
         "tabs": [
             {
                 "id": "tab_1",
-                "label": "Nube Sinte",
+                "label": "Sintetizador basado en TI y la Nube",
                 "tabs": [
                     {
                         "id": "tab_2",
-                        "label": "Recuperar",
+                        "label": "Recuperar MIR",
                         "widgets": [
                             {
                                 "type": "knob",
@@ -85,7 +85,7 @@
                                 "css": "",
                                 "values": {
                                     "ON": 1,
-                                    "OFF": -1
+                                    "OFF": 0
                                 },
                                 "value": "",
                                 "precision": 2,
@@ -140,7 +140,7 @@
                                 "css": "",
                                 "values": {
                                     "ON": 1,
-                                    "OFF": -1
+                                    "OFF": 0
                                 },
                                 "value": "",
                                 "precision": 2,
@@ -176,7 +176,7 @@
                                 "type": "push",
                                 "top": 10,
                                 "left": 830,
-                                "id": "Get new!",
+                                "id": "Obtener Nuevo",
                                 "linkId": "",
                                 "label": "auto",
                                 "width": 140,
@@ -185,8 +185,8 @@
                                 "css": "",
                                 "on": 1,
                                 "off": 0,
-                                "norelease": false,
-                                "precision": 2,
+                                "norelease": true,
+                                "precision": 0,
                                 "address": "/retrieve",
                                 "preArgs": [],
                                 "target": []
@@ -293,7 +293,7 @@
                                 "css": "",
                                 "values": {
                                     "ON": 1,
-                                    "OFF": -1
+                                    "OFF": 0
                                 },
                                 "value": "",
                                 "precision": 2,
@@ -327,7 +327,7 @@
                                 "value": "",
                                 "logScale": false,
                                 "precision": 2,
-                                "address": "/mir/inharmonicity",
+                                "address": "/mir/inharmonicity/mean",
                                 "preArgs": [],
                                 "target": [],
                                 "touchAddress": "",
@@ -377,7 +377,7 @@
                                 "css": "",
                                 "values": {
                                     "ON": 1,
-                                    "OFF": -1
+                                    "OFF": 0
                                 },
                                 "value": "",
                                 "precision": 2,
@@ -398,7 +398,7 @@
                                 "css": "",
                                 "values": {
                                     "ON": 1,
-                                    "OFF": -1
+                                    "OFF": 0
                                 },
                                 "value": "",
                                 "precision": 2,
@@ -767,170 +767,6 @@
                         "value": "",
                         "precision": 0,
                         "address": "/tab_3",
-                        "preArgs": [],
-                        "target": [],
-                        "variables": "@{parent.variables}",
-                        "tabs": [],
-                        "scroll": true
-                    },
-                    {
-                        "id": "tab_4",
-                        "label": "Text Search",
-                        "widgets": [
-                            {
-                                "type": "toggle",
-                                "top": 50,
-                                "left": 60,
-                                "id": "bajo",
-                                "linkId": "",
-                                "label": "auto",
-                                "width": "auto",
-                                "height": "auto",
-                                "color": "auto",
-                                "css": "",
-                                "on": "bajo",
-                                "off": 0,
-                                "value": "",
-                                "precision": 2,
-                                "address": "/content",
-                                "preArgs": [],
-                                "target": []
-                            },
-                            {
-                                "type": "toggle",
-                                "top": 120,
-                                "left": 210,
-                                "id": "guitarra",
-                                "linkId": "",
-                                "label": "auto",
-                                "width": "auto",
-                                "height": "auto",
-                                "color": "auto",
-                                "css": "",
-                                "on": "guitarra",
-                                "off": 0,
-                                "value": "",
-                                "precision": 2,
-                                "address": "/content",
-                                "preArgs": [],
-                                "target": []
-                            },
-                            {
-                                "type": "toggle",
-                                "top": 50,
-                                "left": 420,
-                                "id": "melodia",
-                                "linkId": "",
-                                "label": "auto",
-                                "width": "auto",
-                                "height": "auto",
-                                "color": "auto",
-                                "css": "",
-                                "on": "melodia",
-                                "off": 0,
-                                "value": "",
-                                "precision": 2,
-                                "address": "/melodia",
-                                "preArgs": [],
-                                "target": []
-                            }
-                        ],
-                        "type": "tab",
-                        "color": "auto",
-                        "css": "",
-                        "layout": "",
-                        "spacing": 0,
-                        "value": "",
-                        "precision": 0,
-                        "address": "/tab_4",
-                        "preArgs": [],
-                        "target": [],
-                        "variables": "@{parent.variables}",
-                        "tabs": [],
-                        "scroll": true
-                    },
-                    {
-                        "id": "tab_5",
-                        "label": "Pattern",
-                        "widgets": [
-                            {
-                                "type": "multitoggle",
-                                "left": 10,
-                                "top": 10,
-                                "width": 960,
-                                "height": 570,
-                                "color": "green",
-                                "css": "",
-                                "matrix": [
-                                    4,
-                                    8
-                                ],
-                                "start": 0,
-                                "traversing": true,
-                                "on": 1,
-                                "off": 0,
-                                "value": "",
-                                "precision": 0,
-                                "address": "/pattern",
-                                "preArgs": [],
-                                "split": false,
-                                "target": [],
-                                "id": "Pattern",
-                                "label": "Pattern"
-                            }
-                        ],
-                        "type": "tab",
-                        "color": "auto",
-                        "css": "",
-                        "layout": "",
-                        "spacing": 0,
-                        "value": "",
-                        "precision": 0,
-                        "address": "/tab_5",
-                        "preArgs": [],
-                        "target": [],
-                        "variables": "@{parent.variables}",
-                        "tabs": [],
-                        "scroll": true
-                    },
-                    {
-                        "id": "tab_6",
-                        "label": "Samples",
-                        "widgets": [
-                            {
-                                "type": "multitoggle",
-                                "top": 0,
-                                "left": 0,
-                                "id": "samples",
-                                "label": "PLAY / REC",
-                                "width": 970,
-                                "height": 580,
-                                "color": "red",
-                                "css": "",
-                                "on": 1,
-                                "off": 0,
-                                "value": "",
-                                "precision": 2,
-                                "address": "/samples",
-                                "preArgs": [],
-                                "target": [],
-                                "matrix": [
-                                    4,
-                                    4
-                                ],
-                                "start": 0,
-                                "traversing": true,
-                                "split": false
-                            }
-                        ],
-                        "type": "tab",
-                        "color": "auto",
-                        "css": "",
-                        "layout": "",
-                        "spacing": 0,
-                        "value": "",
-                        "precision": 0,
-                        "address": "/tab_6",
                         "preArgs": [],
                         "target": [],
                         "variables": "@{parent.variables}",

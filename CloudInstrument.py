@@ -142,19 +142,6 @@ if __name__ == '__main__':
 	audio_server.logging = logging
 	
 
-	file_chosen, author, sound_id  = "./start.wav", "void", "0"
-
-	logging.debug( os.path.getsize(file_chosen) )
-	if os.path.exists( file_chosen ) and os.path.getsize(file_chosen)>1000:
-		#WARNING: bad realtime practice (writing file) TODO: add to a memory buffer and write before exit. 
-		logging.debug(file_chosen+" by "+ author + " - id: "+str(sound_id)+"\n")
-		audio_server.vocoderplayfile(file_chosen)
-	#     # pyo_synth_noisevc(file_chosen, dry_val)
-
-	#     # # Add inputs to the mixer
-	#     # mm.addInput(voice=new_voice, input=sfplay)
-	#     #mm.addInput(voice=new_voice, input=pvs)
-	
 	# Server loop
 	if sound_synth=="pyo":
 		pyo_server.gui(locals()) # gui instance (only for pyo)

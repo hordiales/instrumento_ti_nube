@@ -27,8 +27,8 @@ class AudioServer:
         "duration": "sfx.duration",
         "inharmonicity.mean": "sfx.inharmonicity.mean",
         "hfc.mean": "lowlevel.hfc.mean",
-        "spectral_centroid/mean": "lowlevel.spectral_centroid.mean",
-        "spectral_complexity/mean": "lowlevel.spectral_complexity.mean"
+        "spectral_centroid.mean": "lowlevel.spectral_centroid.mean",
+        "spectral_complexity.mean": "lowlevel.spectral_complexity.mean"
     }
     def retrieve_new_sample(self, mir_state):
 

@@ -30,7 +30,7 @@ class MIRState:
         "spectral_complexity.mean",
         "spectral_centroid.mean",
         "pitch_centroid.mean",
-        "inharmonicity"
+        "inharmonicity.mean"
     ]
 
     default_sign = {
