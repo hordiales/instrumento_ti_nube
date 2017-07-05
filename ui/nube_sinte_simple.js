@@ -81,7 +81,6 @@
                                 "width": 130,
                                 "height": 50,
                                 "horizontal": true,
-                                "color": "red",
                                 "css": "",
                                 "values": {
                                     "ON": 1,
@@ -92,7 +91,8 @@
                                 "address": "/mir/hfc/mean/enabled",
                                 "preArgs": [],
                                 "target": [],
-                                "id": "HFC (mean)"
+                                "id": "HFC (mean)",
+                                "color": "auto"
                             },
                             {
                                 "type": "fader",
@@ -136,7 +136,6 @@
                                 "width": 130,
                                 "height": 50,
                                 "horizontal": true,
-                                "color": "red",
                                 "css": "",
                                 "values": {
                                     "ON": 1,
@@ -148,7 +147,8 @@
                                 "preArgs": [],
                                 "target": [],
                                 "id": "SC (mean)",
-                                "linkId": ""
+                                "linkId": "",
+                                "color": "auto"
                             },
                             {
                                 "type": "switch",
@@ -158,7 +158,6 @@
                                 "width": 90,
                                 "height": 70,
                                 "horizontal": true,
-                                "color": "red",
                                 "css": "",
                                 "values": {
                                     "on": 1,
@@ -170,7 +169,8 @@
                                 "preArgs": [],
                                 "target": [],
                                 "id": "bpm_state",
-                                "linkId": ""
+                                "linkId": "",
+                                "color": "auto"
                             },
                             {
                                 "type": "push",
@@ -233,7 +233,6 @@
                                 "width": 90,
                                 "height": 70,
                                 "horizontal": true,
-                                "color": "red",
                                 "css": "",
                                 "values": {
                                     "ON": 1,
@@ -245,7 +244,8 @@
                                 "preArgs": [],
                                 "target": [],
                                 "id": "dur_state",
-                                "linkId": ""
+                                "linkId": "",
+                                "color": "auto"
                             },
                             {
                                 "type": "fader",
@@ -289,7 +289,6 @@
                                 "width": 90,
                                 "height": 60,
                                 "horizontal": true,
-                                "color": "red",
                                 "css": "",
                                 "values": {
                                     "ON": 1,
@@ -301,7 +300,8 @@
                                 "preArgs": [],
                                 "target": [],
                                 "linkId": "",
-                                "id": "spec_cent"
+                                "id": "spec_cent",
+                                "color": "auto"
                             },
                             {
                                 "type": "knob",
@@ -373,7 +373,6 @@
                                 "width": 130,
                                 "height": 50,
                                 "horizontal": true,
-                                "color": "red",
                                 "css": "",
                                 "values": {
                                     "ON": 1,
@@ -381,11 +380,12 @@
                                 },
                                 "value": "",
                                 "precision": 2,
-                                "address": "/mir/inharmonicity/enabled",
+                                "address": "/mir/inharmonicity/mean/enabled",
                                 "preArgs": [],
                                 "target": [],
                                 "id": "Inharm",
-                                "linkId": ""
+                                "linkId": "",
+                                "color": "auto"
                             },
                             {
                                 "type": "switch",
@@ -394,7 +394,6 @@
                                 "width": 130,
                                 "height": 50,
                                 "horizontal": true,
-                                "color": "red",
                                 "css": "",
                                 "values": {
                                     "ON": 1,
@@ -407,7 +406,8 @@
                                 "target": [],
                                 "id": "PC (mean)",
                                 "linkId": "",
-                                "label": "PC (mean)"
+                                "label": "PC (mean)",
+                                "color": "auto"
                             }
                         ],
                         "type": "tab",
@@ -429,35 +429,14 @@
                         "label": "Síntesis",
                         "widgets": [
                             {
-                                "type": "keyboard",
-                                "id": "pitch",
-                                "label": "auto",
-                                "left": 0,
-                                "top": 520,
-                                "width": 820,
-                                "height": 170,
-                                "color": "auto",
-                                "css": "",
-                                "precision": 0,
-                                "address": "/pitch",
-                                "preArgs": [],
-                                "target": [],
-                                "keys": 24,
-                                "start": 60,
-                                "traversing": true,
-                                "on": 1,
-                                "off": 0,
-                                "split": false
-                            },
-                            {
                                 "type": "fader",
-                                "top": 10,
-                                "left": 860,
+                                "top": 20,
+                                "left": 550,
                                 "id": "Volume",
                                 "label": "auto",
                                 "unit": "",
-                                "width": "auto",
-                                "height": "auto",
+                                "width": 420,
+                                "height": 460,
                                 "alignRight": false,
                                 "horizontal": false,
                                 "compact": false,
@@ -467,7 +446,7 @@
                                 "spring": false,
                                 "range": {
                                     "min": 0,
-                                    "max": 10
+                                    "max": 5
                                 },
                                 "origin": "auto",
                                 "value": "",
@@ -485,12 +464,12 @@
                             },
                             {
                                 "type": "toggle",
-                                "top": 0,
-                                "left": 0,
+                                "top": 410,
+                                "left": 20,
                                 "id": "Gate",
                                 "linkId": "",
                                 "label": "auto",
-                                "width": 220,
+                                "width": 510,
                                 "height": 70,
                                 "color": "green",
                                 "css": "",
@@ -504,8 +483,8 @@
                             },
                             {
                                 "type": "switch",
-                                "top": 110,
-                                "left": 0,
+                                "top": 140,
+                                "left": 20,
                                 "id": "Freeze",
                                 "label": "auto",
                                 "width": 220,
@@ -526,8 +505,8 @@
                             },
                             {
                                 "type": "switch",
-                                "top": 250,
-                                "left": 0,
+                                "top": 270,
+                                "left": 20,
                                 "id": "Reverb",
                                 "label": "auto",
                                 "width": 220,
@@ -548,14 +527,14 @@
                             },
                             {
                                 "type": "knob",
-                                "top": 110,
+                                "top": 140,
                                 "left": 250,
                                 "id": "Position",
                                 "linkId": "",
                                 "label": "auto",
                                 "unit": "",
                                 "width": 130,
-                                "height": 120,
+                                "height": 110,
                                 "color": "auto",
                                 "compact": false,
                                 "angle": 270,
@@ -579,14 +558,14 @@
                             },
                             {
                                 "type": "knob",
-                                "top": 110,
+                                "top": 140,
                                 "left": 400,
                                 "id": "Width",
                                 "linkId": "",
                                 "label": "auto",
                                 "unit": "",
                                 "width": 130,
-                                "height": 120,
+                                "height": 110,
                                 "color": "auto",
                                 "compact": false,
                                 "angle": 270,
@@ -610,7 +589,7 @@
                             },
                             {
                                 "type": "knob",
-                                "top": 250,
+                                "top": 270,
                                 "left": 250,
                                 "id": "Wet",
                                 "linkId": "",
@@ -641,7 +620,7 @@
                             },
                             {
                                 "type": "knob",
-                                "top": 250,
+                                "top": 270,
                                 "left": 400,
                                 "id": "Dry",
                                 "linkId": "",
@@ -672,14 +651,14 @@
                             },
                             {
                                 "type": "fader",
-                                "top": 390,
-                                "left": 0,
+                                "top": 20,
+                                "left": 20,
                                 "id": "PAN",
                                 "linkId": "",
                                 "label": "auto",
                                 "unit": "",
-                                "width": 820,
-                                "height": 110,
+                                "width": 510,
+                                "height": 100,
                                 "alignRight": false,
                                 "horizontal": true,
                                 "compact": false,
@@ -703,60 +682,6 @@
                                 "meterAddress": "",
                                 "pips": true,
                                 "doubleTap": false
-                            },
-                            {
-                                "type": "xy",
-                                "top": 10,
-                                "left": 590,
-                                "id": "spac",
-                                "linkId": "",
-                                "label": "auto",
-                                "width": 250,
-                                "height": 190,
-                                "color": "auto",
-                                "css": "",
-                                "snap": false,
-                                "spring": false,
-                                "rangeX": {
-                                    "min": 0,
-                                    "max": 1
-                                },
-                                "rangeY": {
-                                    "min": 0,
-                                    "max": 1
-                                },
-                                "logScaleX": false,
-                                "logScaleY": false,
-                                "value": "",
-                                "precision": 2,
-                                "address": "/xy_1",
-                                "preArgs": [],
-                                "split": false,
-                                "target": [],
-                                "touchAddress": "",
-                                "doubleTap": false
-                            },
-                            {
-                                "type": "switch",
-                                "top": 190,
-                                "left": 560,
-                                "id": "activate",
-                                "linkId": "",
-                                "label": "auto",
-                                "width": 250,
-                                "height": 50,
-                                "horizontal": true,
-                                "color": "auto",
-                                "css": "",
-                                "values": {
-                                    "on": 1,
-                                    "off": 2
-                                },
-                                "value": "",
-                                "precision": 2,
-                                "address": "/switch_1",
-                                "preArgs": [],
-                                "target": []
                             }
                         ],
                         "type": "tab",

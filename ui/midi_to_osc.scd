@@ -67,8 +67,8 @@ MIDI to OSC mapping
 
 ~mir_duration = "/mir/duration";
 ~mir_bpm = "/mir/bpm";
-~mir_inharmonicity = "/mir/inharmonicity";
 
+~mir_inharmonicity = "/mir/inharmonicity/mean";
 ~mir_hfc = "/mir/hfc/mean";
 ~mir_spectral_complexity = "/mir/spectral_complexity/mean";
 ~mir_spectral_centroid = "/mir/spectral_centroid/mean";
@@ -78,7 +78,7 @@ MIDIIn.control = {arg src, chan, num, val;
 	[chan,num,val].postln; //monitor
 	switch(num,
 		//fx
-		~cc_slider_master,{~send_osc.value(o, p, ~fx_volume, val.linlin(0,127,0,10))}, //linexp?
+		~cc_slider_master,{~send_osc.value(o, p, ~fx_volume, val.linlin(0,127,0,5))}, //linexp?
 		~cc_col8_knob3,{~send_osc.value(o, p, ~fx_pan, val.linlin(0,127,-1,1))},
 
 		//MIR descriptors
@@ -120,7 +120,7 @@ MIDIIn.control = {arg src, chan, num, val;
 ~mir_duration_enabled = "/mir/duration/enabled";
 ~mir_bpm_enabled = "/mir/bpm/enabled";
 
-~mir_inharmonicity_enabled = "/mir/inharmonicity/enabled";
+~mir_inharmonicity_enabled = "/mir/inharmonicity/mean/enabled";
 ~mir_hfc_enabled = "/mir/hfc/mean/enabled";
 ~mir_spectral_complexity_enabled = "/mir/spectral_complexity/mean/enabled";
 ~mir_pitch_centroid_enabled = "/mir/pitch_centroid/mean/enabled";

@@ -1,25 +1,3 @@
-
-# osc_desc_conv = {
-# 	"content": "content",
-# 	"BPM": "BPM",
-# 	"duration": "sfx.duration",
-# 	"inharmonicity/mean": "sfx.inharmonicity.mean",
-# 	"hfc/mean": "lowlevel.hfc.mean",
-# 	"spectral_centroid/mean": "lowlevel.spectral_centroid.mean",
-# 	"spectral_complexity/mean": "lowlevel.spectral_complexity.mean"
-# }
-# osc_descriptors = list()
-# # for key,value in osc_desc_conv.iteritems():
-# #     osc_descriptors
-# osc_descriptors = ["duration", "BPM", "hfc", "spectral_complexity/mean", "spectral_centroid/mean", "inharmonicity" ]
-# osc_desc_state = dict()
-# for desc in osc_descriptors:
-# 	osc_desc_state[desc] = False
-
-state = dict() #global MIR state
-state["duration"] = "1." # default value
-volume = 1.
-
 class MIRState:
     debug = True
     desc = dict() # MIR Descriptors
@@ -40,7 +18,7 @@ class MIRState:
         "spectral_complexity.mean": "=",
         "spectral_centroid.mean": "=",
         "pitch_centroid.mean": "=",
-        "inharmonicity": "="
+        "inharmonicity.mean": "="
     }
 
     def __init__(self):
