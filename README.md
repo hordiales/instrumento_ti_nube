@@ -7,8 +7,9 @@ Entre las posibles aplicaciones, además de funcionar como herramienta de búsqu
 
 ![](doc/InstrNubeTI_repr.png)
 
-
 ![](doc/Apicultor_chain.png)
+
+![](doc/retrieve_ui.png)
 
 # Dependencias
 

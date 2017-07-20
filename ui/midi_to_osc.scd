@@ -54,10 +54,24 @@ MIDI to OSC mapping
 ~cc_col4_knob3 = 30;
 ~cc_slider4= 31;
 
-~cc_col8_knob3 = 60;
+~cc_col5_knob1 = 46;
+~cc_col5_knob2 = 47;
+~cc_col5_knob3 = 48;
 ~cc_slider5= 49;
+
+~cc_col6_knob1 = 50;
+~cc_col6_knob2 = 51;
+~cc_col6_knob3 = 52;
 ~cc_slider6= 53;
+
+~cc_col7_knob1 = 54;
+~cc_col7_knob2 = 55;
+~cc_col7_knob3 = 56;
 ~cc_slider7= 57;
+
+~cc_col8_knob1 = 58;
+~cc_col8_knob2 = 59;
+~cc_col8_knob3 = 60;
 ~cc_slider8= 61;
 
 ~cc_slider_master = 62;
