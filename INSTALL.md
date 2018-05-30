@@ -20,6 +20,10 @@
         $ pip2 install pyliblo 
 
 
+# Flask
+
+        $ pip install flask flask-autodocs
+
 # Freesound API module
 
         $ git clone https://github.com/MTG/freesound-python
